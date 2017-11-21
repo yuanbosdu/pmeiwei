@@ -8,6 +8,7 @@ Page({
   data: {
     currentTab: 0,
     goodsInfo: {},
+    shopsGoods: [],
     showSpecMenu:false
 
   },
@@ -18,7 +19,8 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      goodsInfo: goodsData.goodsInfo(options.id)
+      goodsInfo: goodsData.goodsInfo(options.shops_id),
+      shopsGoods: goodsData.newGoods(),
     })
   },
   /** 
@@ -48,11 +50,6 @@ Page({
   hideSpecMenu:function(){
     this.setData({
       showSpecMenu: false,
-    })
-  },
-  toShop: function () {
-    wx.redirectTo({
-      url: '../shops/shops?shops_id=' + this.data.goodsInfo.shops_id,
     })
   },
   /**

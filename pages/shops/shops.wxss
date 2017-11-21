@@ -310,7 +310,7 @@ swiper.swiper {
 }
 .section-title{
   padding: 0 16rpx;
-  font-size: 1.0em;
+  font-size: 1.5em;
   color: #66cc33;
   border-left: 10rpx solid #66cc33;
   margin-bottom: 20rpx;

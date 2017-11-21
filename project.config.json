@@ -9,7 +9,7 @@
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
 	"appid": "wx4bf470a47b9b2d38",
-	"projectname": "shopApp",
+	"projectname": "pmeiwei",
 	"condition": {
 		"weapp": {
 			"current": -1,

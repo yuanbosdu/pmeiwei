@@ -11,6 +11,17 @@
     <text class="goods_name">{{goodsInfo.goods_name}}</text>
     <text class="goods_price">{{goodsInfo.goods_price}}</text>
   </view>
+  <view class='index-section'>
+    <view class='section-title'>
+      正在拼团
+    </view>
+    <view class='section-content'>
+      list1
+      list2
+      list3
+      list4
+    </view>
+  </view>
   <view class="tab">
     <view class="tab-item {{currentTab==0?'tab-active' : ''}}" data-current="0" bindtap="tab">商品详情</view>
     <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">参数</view>
@@ -30,8 +41,8 @@
     </view>
   </view>
   <view class="footer">
-    <button class="add-cart" size="mini" bindtap="addCart">加入购物车</button>
-    <button class="buy" size="mini" bindtap="buy">立即购买</button>
+    <button class="add-cart" size="mini" bindtap="toShop">店铺</button>
+    <button class="buy" size="mini" bindtap="buy">拼美味</button>
   </view>
   <view wx:if="{{showSpecMenu}}" class="spec-menu-bg" bindtap="hideSpecMenu"></view>
   <view wx:if="{{showSpecMenu}}" class="spec-menu">

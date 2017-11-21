@@ -4,7 +4,8 @@
     "pages/new/new",
     "pages/cart/cart",
     "pages/user/user",
-    "pages/goods/goods"
+    "pages/goods/goods",
+    "pages/shops/shops"
   ],
   "tabBar": {
     "color": "#666",
@@ -34,7 +35,7 @@
   "window":{
     "backgroundColor": "#f8f8f8",
     "backgroundTextStyle":"light",
-    "navigationBarTitleText": "shop",
+    "navigationBarTitleText": "拼美味",
     "navigationBarTextStyle":"#fff"
   }
 }

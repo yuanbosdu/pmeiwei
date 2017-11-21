@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="goods-view">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-color="rgba(0, 0, 0, 0.1)" indicator-active-color="rgba(0, 0, 0, 0.6)">
+    <block wx:for="{{goodsInfo.goods_imgs}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='goods_shop'>
+    商家信息
+  </view>
+  <view class='index-section'>
+    <view class='section-title'>拼团美食</view>
+    <view class='section-content'>
+    <block wx:for='{{shopsGoods}}'>
+      <navigator class='section-item' url='/pages/goods/goods?id={{item.goods_id}}'>
+        <image class='section-img' mode='widthFix' src='{{item.thumbnail}}'/>
+        <text class='section-name'>{{item.goods_name}}</text>
+        <text class='section-price'>{{item.goods_price}}</text>
+      </navigator>
+    </block>
+    </view>
+  </view>
+  
+</view>

@@ -18,10 +18,12 @@ function allGoods() {
         {
           "classification_id": 1,
           "goods_id": 1,
+          "shops_id": 1,
           "thumbnail": "/images/goods1.jpg",
           "goods_name": "凤梨酥新品上市，尝新价28.9，现在买三盒立减15元凤梨酥新品上市，尝新价28.9，现在买三盒立减15元",
           "goods_price": 28.9,
           "goods_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
+          "shops_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "goods_description": "凤梨酥新品上市，尝新价29.9，现在买三盒立减15元",
           "goods_detail_img": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "parameter":[
@@ -72,10 +74,12 @@ function allGoods() {
         {
           "classification_id": 2,
           "goods_id": 2,
+          "shops_id": 2,
           "thumbnail": "/images/goods1.jpg",
           "goods_name": "核桃酥",
           "goods_price": 26.9,
           "goods_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
+          "shops_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "goods_description": "凤梨酥新品上市，尝新价29.9，现在买三盒立减15元",
           "goods_detail_img": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "availSku": {
@@ -111,10 +115,12 @@ function allGoods() {
         },{
           "classification_id": 3,
           "goods_id": 3,
+          "shops_id": 3,
           "thumbnail": "/images/goods2.jpg",
           "goods_name": "凤梨酥新品上市，尝新价28.9，现在买三盒立减15元",
           "goods_price": 28.9,
           "goods_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
+          "shops_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "goods_description": "凤梨酥新品上市，尝新价29.9，现在买三盒立减15元",
           "goods_detail_img": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "availSku": {
@@ -151,10 +157,12 @@ function allGoods() {
         {
           "classification_id": 4,
           "goods_id": 4,
+          "shops_id": 4,
           "thumbnail": "/images/goods1.jpg",
           "goods_name": "核桃酥",
           "goods_price": 26.9,
           "goods_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
+          "shops_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "goods_description": "凤梨酥新品上市，尝新价29.9，现在买三盒立减15元",
           "goods_detail_img": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "availSku": {
@@ -190,10 +198,12 @@ function allGoods() {
         }, {
           "classification_id": 1,
           "goods_id": 5,
+          "shops_id": 5,
           "thumbnail": "/images/goods2.jpg",
           "goods_name": "凤梨酥新品上市，尝新价28.9，现在买三盒立减15元",
           "goods_price": 28.9,
           "goods_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
+          "shops_imgs": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "goods_description": "凤梨酥新品上市，尝新价29.9，现在买三盒立减15元",
           "goods_detail_img": ["/images/goods1.jpg", "/images/goods2.jpg"],
           "availSku": {
@@ -280,6 +290,16 @@ function goodsInfo(id) {
   var result = [];
   for (let i = 0; i < goods_list.goods.length; i++) {
     if (goods_list.goods[i].goods_id == id) {
+      result = goods_list.goods[i];
+    }
+  }
+  return result || {}
+}
+
+function shopsInfo(shops_id) {
+  var result = [];
+  for (let i = 0; i < goods_list.goods.length; i++) {
+    if (goods_list.goods[i].shops_id == id) {
       result = goods_list.goods[i];
     }
   }
