@@ -16,10 +16,26 @@
       正在拼团
     </view>
     <view class='section-content'>
-      list1
-      list2
-      list3
-      list4
+      <view class='local-group-item'>
+        <image class='local-group-img' src='http://avatar.yangkeduo.com/a/7e2e818014ef6ece5329fea69ac44834d0a0d29d-1500821035?x-oss-process=image/resize,w_100'/>
+          <view class='local-group-name'>宝宝</view>
+        <view class='new-local-group-detail'>
+          <view class='local-group-info'>
+            <view class='local-group-person'>
+              "还差"
+              <span class='local-group-num'>
+              "1"
+              "人"
+              "拼成"
+              </span>
+            </view>
+            <view class='local-group-timer'>
+              "剩余"
+            </view>
+          </view>
+        </view>
+        <button class='local-group-btn-border weui-btn' type='primary'>去拼单</button>
+      </view>
     </view>
   </view>
   <view class="tab">
@@ -42,7 +58,7 @@
   </view>
   <view class="footer">
     <button class="add-cart" size="mini" bindtap="toShop">店铺</button>
-    <button class="buy" size="mini" bindtap="buy">拼美味</button>
+    <button class="buy" size="mini" bindtap="pinTuan">拼美味</button>
   </view>
   <view wx:if="{{showSpecMenu}}" class="spec-menu-bg" bindtap="hideSpecMenu"></view>
   <view wx:if="{{showSpecMenu}}" class="spec-menu">
@@ -61,17 +77,17 @@
     </view>
     <view class="spec-menu-middle">
       <view class="spec-list" wx:for="{{goodsInfo.sku}}">
-       <view class="spec-className">{{item.pName}}</view>
+       <view id='{{index}}' class="spec-className">{{item.pName}}</view>
        <view class="spec-classItem">
-        <label wx:for="{{item.pList}}">{{item}}</label>
+        <label id='{{index}}' class="{{ index == selectId? 'active': '' }}" bindtap='mSelect' wx:for="{{item.pList}}">{{item}}</label>
        </view>
       </view>
       <view class="quantity-wrapper">
         <text>购买数量</text>
         <view class="quantity-btn">
-          <button>-</button>
-          <input type="text" value="1"/>
-          <button>+</button>
+          <button bindtap='decrease'>-</button>
+          <input type="text" value="{{quantity}}"/>
+          <button bindtap='increase'>+</button>
         </view>
       </view>
     </view>

@@ -8,8 +8,9 @@ Page({
   data: {
     currentTab: 0,
     goodsInfo: {},
-    showSpecMenu:false
-
+    showSpecMenu:false,
+    quantity: 1,
+    selectId: 0,
   },
 
   /**
@@ -55,11 +56,32 @@ Page({
       url: '../shops/shops?shops_id=' + this.data.goodsInfo.shops_id,
     })
   },
+  pinTuan: function() {
+    this.setData({
+      showSpecMenu: true,
+    })
+  },
+  decrease: function() {
+    this.setData({
+      quantity: this.data.quantity > 1 ? this.data.quantity-1: 1,
+    })
+  },
+  increase: function() {
+    this.setData({
+      quantity: this.data.quantity+1,
+    })
+  },
+  mSelect: function(e) {
+    console.log(JSON.stringify(e));
+    this.setData({
+      selectId: e.target.id,
+    });
+    console.log(this.data.selectId);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
